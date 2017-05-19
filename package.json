@@ -1,0 +1,37 @@
+{
+  "name": "web-conference-setup",
+  "version": "1.0.0",
+  "description": "A small project for testing if you Hardware and Internet connection are suited for web conferences",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/th-koeln/web-conference-setup.git"
+  },
+  "author": "Bernhard Kelm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/th-koeln/web-conference-setup/issues"
+  },
+  "homepage": "https://github.com/th-koeln/web-conference-setup#readme",
+  "dependencies": {
+    "cluster": "^0.7.7",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.11",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-sass": "^3.1.0",
+    "node-sass": "^4.5.3",
+    "nodemon": "^1.11.0"
+  }
+}
