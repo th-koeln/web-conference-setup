@@ -1,10 +1,22 @@
-// Menu navigation
-var navLinks = document.getElementsByClassName('nav');
+// On dom content load
+document.addEventListener('DOMContentLoaded', function() {
+  addNavListener();
+});
 
-for(var i = 0; i < navLinks.length; i++) {
-	navLinks[i].onclick = function(e) {
-		navigateTo(e.target.getAttribute('data-nav'));
-	}
+// Menu navigation
+function addNavListener() {
+  var navLinks = document.getElementsByClassName('nav');
+
+  for(var i = 0; i < navLinks.length; i++) {
+  	navLinks[i].onclick = function(e) {
+  		navigateTo(e.target.getAttribute('data-nav'));
+  	}
+  }
+}
+
+// Adding the event handler to the buttons progressing the page
+function addButtonListener() {
+  // ToDo: Add event progression from the buttons
 }
 
 // ToDo: Replace with animation

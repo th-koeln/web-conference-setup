@@ -4,4 +4,11 @@ main {
   margin-left: 300px;
   height: 100%;
   padding: 40px 60px;
+
+  h1 {
+    font-family: $josefin;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 3px solid $main;
+  }
 }

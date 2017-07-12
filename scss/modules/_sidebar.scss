@@ -42,6 +42,8 @@
 			-ms-transform: translate(-50%);
 			margin-left: -20px;
 			margin-top: -4px;
+			line-height: 26px;
+			text-align: center;
 		}
 
 		&:after {
@@ -53,6 +55,20 @@
 			margin-top: 23px;
 			left: 0;
 			margin-left: 59px;
+		}
+
+		&.passed {
+			&:before {
+				color: $passed;
+				content: "\2714"
+			}
+		}
+
+		&.failed {
+			&:before {
+				color: $failed;
+				content: "\2715";
+			}
 		}
 	}
 }

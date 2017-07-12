@@ -145,7 +145,12 @@ function gotStream(stream) {
     
     // Styling the waves
     this.ctx.lineWidth = lineWidth * this.dpr;
-    this.ctx.strokeStyle = strokeStyle;
+    if(meter.volume > 0.25) {
+      // ToDo: Add a funciton which starts a test for X seconds and checks if the volume is over a certain threshold and how often the mic is clipping. This will determin if the test is passed or failed
+      this.ctx.strokeStyle = 'rgba(212, 21, 71, 0.5)';
+    } else {
+      this.ctx.strokeStyle = strokeStyle;
+    }
     this.ctx.lineCap = 'round';
     this.ctx.lineJoin = 'round';
     this.ctx.beginPath();
@@ -199,27 +204,27 @@ function gotStream(stream) {
       {
         timeModifier: 1,
         lineWidth: 1,
-        amplifyer: 600,
+        amplifyer: 2000,
         wavelength: 200,
         segmentLength: 20
       },
       {
         timeModifier: 1,
         lineWidth: 2,
-        amplifyer: 700,
+        amplifyer: 3000,
         wavelength: 100
       },
       {
         timeModifier: 1,
         lineWidth: 1,
-        amplifyer: 500,
+        amplifyer: 2500,
         wavelength: 50,
         segmentLength: 10
       },
       {
         timeModifier: 1,
         lineWidth: 0.5,
-        amplifyer: 650,
+        amplifyer: 3600,
         wavelength: 100,
         segmentLength: 10
       }
@@ -253,23 +258,10 @@ function gotStream(stream) {
 function createAudioMeter(audioContext, clipLevel, averaging, clipLag) {
   var processor = audioContext.createScriptProcessor(512);
   processor.onaudioprocess = volumeAudioProcess;
-  processor.clipping = false;
-  processor.lastClip = 0;
   processor.volume = 0;
-  processor.clipLevel = clipLevel || 0.98;
   processor.averaging = averaging || 0.95;
-  processor.clipLag = clipLag || 750;
 
   processor.connect(audioContext.destination);
-
-  // ToDo: Fix the clipping function, does not execute at all times
-  processor.checkClipping = function() {
-    if (!this.clipping)
-      return false;
-    if ((this.lastClip + this.clipLag) < window.performance.now())
-      this.clipping = false;
-    return this.clipping;
-  };
 
   processor.shutdown = function() {
     this.disconnect();

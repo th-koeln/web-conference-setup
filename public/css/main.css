@@ -11,6 +11,39 @@ html, body {
   height: 100%;
   width: 100%; }
 
+/* line 1, scss/modules/_button.scss */
+button {
+  background: transparent;
+  font-size: 24px;
+  display: block;
+  margin: 20px auto;
+  border: 2px solid #0099CC;
+  border-radius: 2px;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease; }
+  /* line 14, scss/modules/_button.scss */
+  button:focus {
+    outline: 0; }
+  /* line 18, scss/modules/_button.scss */
+  button:after {
+    content: "";
+    width: 100%;
+    height: 0%;
+    left: 0;
+    bottom: 0;
+    z-index: -10;
+    position: absolute;
+    background: #0099CC;
+    transition: height 0.3s ease; }
+  /* line 30, scss/modules/_button.scss */
+  button:hover {
+    color: white; }
+    /* line 33, scss/modules/_button.scss */
+    button:hover:after {
+      height: 100%; }
+
 /* line 1, scss/modules/_main.scss */
 main {
   width: calc(100% - 300px);
@@ -18,6 +51,12 @@ main {
   margin-left: 300px;
   height: 100%;
   padding: 40px 60px; }
+  /* line 8, scss/modules/_main.scss */
+  main h1 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #0099CC; }
 
 /* line 3, scss/modules/_sidebar.scss */
 #sidebar {
@@ -59,8 +98,10 @@ main {
       -o-transform: translate(-50%);
       -ms-transform: translate(-50%);
       margin-left: -20px;
-      margin-top: -4px; }
-    /* line 47, scss/modules/_sidebar.scss */
+      margin-top: -4px;
+      line-height: 26px;
+      text-align: center; }
+    /* line 49, scss/modules/_sidebar.scss */
     #sidebar .nav:after {
       content: "";
       height: 52px;
@@ -70,6 +111,14 @@ main {
       margin-top: 23px;
       left: 0;
       margin-left: 59px; }
+    /* line 61, scss/modules/_sidebar.scss */
+    #sidebar .nav.passed:before {
+      color: #CCFFCC;
+      content: "\2714"; }
+    /* line 68, scss/modules/_sidebar.scss */
+    #sidebar .nav.failed:before {
+      color: #D41547;
+      content: "\2715"; }
 
 /* line 6, scss/main.scss */
 * {
