@@ -1,0 +1,58 @@
+@import 'components/all';
+
+#sidebar {
+	display: inline-block;
+	padding: 40px;
+	background: $main;
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 300px;
+
+	a {
+		display: block;
+		margin-bottom: 40px;
+		text-decoration: none;
+		color: white;
+
+		&#logo {
+			font-family: $josefin;
+			font-weight: 700;
+			font-size: 3em;
+		}
+	}
+
+	.nav {
+		margin-bottom: 60px;
+		margin-left: 40px;
+
+		&:before {
+			content: "";
+			font-family: 'FontAwesome';
+			height: 24px;
+			width: 24px;
+			border-radius: 50%;
+			border: 3px solid $base;
+			position: absolute;
+			transform: translate(-50%);
+			-webkit-transform: translate(-50%);
+			-moz-transform: translate(-50%);
+			-o-transform: translate(-50%);
+			-ms-transform: translate(-50%);
+			margin-left: -20px;
+			margin-top: -4px;
+		}
+
+		&:after {
+			content: "";
+			height: 52px;
+			width: 3px;
+			background: $base;
+			position: absolute;
+			margin-top: 23px;
+			left: 0;
+			margin-left: 59px;
+		}
+	}
+}

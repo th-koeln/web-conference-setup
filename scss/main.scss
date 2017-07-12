@@ -1,2 +1,9 @@
 //All base imports
 @import 'base';
+@import 'components/all';
+@import 'modules/all';
+
+* {
+  font-family: $lato;
+  font-weight: 300;
+}

@@ -2,7 +2,22 @@
 <html>
 <% include modules/head %>
 <body>
-	<% include modules/header %>
-	<h1>Hello World!</h1>
+	<% include modules/sidebar %>
+	<main>
+		<div id="intro">
+			<p>Description here</p>
+		</div>
+		<div id="soundTest">
+			<h2>Soundtest</h2>
+			<button id="soundStart">Start sound test</button>
+			<canvas id="waves"></canvas>
+		</div>
+		<div id="videoTest" style="display: none">
+			<h2>Videotest</h2>
+		</div>
+		<div id="speedTest" style="display: none">
+			<h2>Speedtest</h2>
+		</div>
+	</main>
 </body>
 </html>
